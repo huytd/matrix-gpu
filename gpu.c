@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <OpenCL/opencl.h>
 #include <time.h>
+#ifdef __APPLE__
+#include <OpenCL/opencl.h>
+#else
+#include <CL/cl.h>
+#endif
 
 #define MAX_SOURCE_SIZE (0x100000)
 #define MATRIX_SIZE 1000
