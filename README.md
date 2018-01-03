@@ -37,3 +37,33 @@ Run the GPU program with:
 ```
 ./gpu
 ```
+
+## Compare the result
+
+To compare the result of the two methods, do the following steps:
+
+**Step 1:** Run CPU code and save the output to `output_cpu` file:
+
+```
+./cpu > output_cpu
+```
+
+**Step 2:** Run GPU code and save the output to `output_gpu` file:
+
+```
+./gpu > output_gpu
+```
+
+**Step 3:** Use `diff` to compare the two results to make sure outputs are the same:
+
+```
+diff output_cpu output_gpu
+```
+
+The only different is the running time. For example:
+
+```
+< Runtime: 4.849347ms
+---
+> Runtime: 0.001779ms
+```
