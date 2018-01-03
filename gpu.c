@@ -75,7 +75,7 @@ int main() {
   clock_t begin = clock();
 
   size_t globalWorkSize[2] = {MATRIX_SIZE, MATRIX_SIZE};
-  size_t localWorkSize[2] = {2, 2};
+  size_t localWorkSize[2] = {1, 1};
 
   ret = clEnqueueNDRangeKernel(command_queue, kernel, 2, NULL, globalWorkSize, localWorkSize, 0, NULL, NULL);
   ret = clEnqueueReadBuffer(command_queue, memobj_C, CL_TRUE, 0, MATRIX_SIZE * MATRIX_SIZE * sizeof(cl_mem), C, 0, NULL, NULL);
